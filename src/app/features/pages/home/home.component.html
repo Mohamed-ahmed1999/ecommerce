@@ -1,0 +1,46 @@
+<section class="main-slider py-5">
+    <div class="flex">
+        <div class="slider w-[70%]">
+            <owl-carousel-o [options]="customMainOptions">
+                <ng-template carouselSlide> <img src="assets/images/slider-image-3.jpeg" class="w-full h-[300px]"alt="">
+                </ng-template>
+                <ng-template carouselSlide> <img src="assets/images/banner-4.jpeg" class="w-full h-[300px]" alt="">
+                </ng-template>
+                <ng-template carouselSlide> <img src="assets/images/slider-image-2.jpeg" class="w-full h-[300px]"alt="">
+                </ng-template>
+            </owl-carousel-o>
+
+        </div>
+        <div class="imgs w-[30%]">
+            <img src="assets/images/grocery-banner.png" class="w-full h-[150px]" alt="">
+            <img src="assets/images/grocery-banner-2.jpeg" class="w-full h-[150px]" alt="">
+        </div>
+
+    </div>
+</section>
+
+
+<section class="cat-slider py-5 ">
+
+    <h2 class="text-3xl">Shop popular categories</h2>
+    <owl-carousel-o [options]="customOptions">
+
+        @for(category of categoriesList; track $index){
+        <ng-template carouselSlide>
+            <div class="">
+                <img [src]="category.image" class=" h-[300px] " alt="">
+                <h3 class="mt-2 font-semibold">{{category.name}}</h3>
+            </div>
+
+
+        </ng-template>
+
+        }
+    </owl-carousel-o>
+</section>
+
+<div class="products">
+    <h2 class="text-3xl my-3 font-light">Shope Popular Products</h2>
+</div>
+
+<app-products></app-products>
